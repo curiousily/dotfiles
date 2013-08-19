@@ -64,6 +64,7 @@ Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-session'
+Bundle 'sjl/gundo.vim'
 
 set laststatus=2
 let g:Powerline_symbols = 'fancy'
