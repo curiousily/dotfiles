@@ -89,6 +89,10 @@ set backspace=indent,eol,start
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 
+" Disable autosave session
+
+:let g:session_autosave = 'no'
+
 " autocommands ------------------------------------------------------------
 " opens the file at the exact place of from the last opening
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
