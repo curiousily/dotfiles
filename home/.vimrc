@@ -54,16 +54,16 @@ call vundle#rc()
 
 " let Vundle manage Vundle
 " required! 
-#Bundle 'gmarik/vundle'
-#Bundle 'Lokaltog/powerline'
-#Bundle 'Lokaltog/vim-easymotion'
-#Bundle 'tpope/vim-fugitive'
-#Bundle 'MarcWeber/vim-addon-mw-utils'
-#Bundle 'tomtom/tlib_vim'
-#Bundle 'garbas/vim-snipmate'
-#Bundle 'honza/vim-snippets'
-#Bundle 'xolox/vim-misc'
-#Bundle 'xolox/vim-session'
+Bundle 'gmarik/vundle'
+Bundle 'Lokaltog/powerline'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'tpope/vim-fugitive'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
+Bundle 'honza/vim-snippets'
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-session'
 
 set laststatus=2
 let g:Powerline_symbols = 'fancy'
