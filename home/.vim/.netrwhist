@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/venelin/.android'
+let g:netrw_dirhist_2='/home/venelin/Dev/python/workspace/stocked'
+let g:netrw_dirhist_3='/home/venelin/Dev/python/workspace/stocked/tests'
+let g:netrw_dirhist_4='/home/venelin/Dev/python/workspace/stocked'
+let g:netrw_dirhist_5='/home/venelin/Dev/python/workspace/stocked/stacked'
+let g:netrw_dirhist_6='/home/venelin/Dev/python/workspace/stocked'
+let g:netrw_dirhist_7='/home/venelin/Dev/python/workspace/stocked/stocked'
