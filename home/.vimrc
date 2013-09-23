@@ -65,6 +65,7 @@ Bundle 'honza/vim-snippets'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-session'
 Bundle 'sjl/gundo.vim'
+Bundle 'roman/golden-ratio'
 
 set laststatus=2
 let g:Powerline_symbols = 'fancy'
