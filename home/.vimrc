@@ -24,6 +24,7 @@ set smartindent
 
 set t_Co=256
 color wombat256mod
+set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 
 " yank copies to the system clipboard
 set clipboard=unnamed
@@ -66,6 +67,7 @@ Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-session'
 Bundle 'sjl/gundo.vim'
 Bundle 'roman/golden-ratio'
+Bundle 'bling/vim-bufferline'
 
 set laststatus=2
 let g:Powerline_symbols = 'fancy'
