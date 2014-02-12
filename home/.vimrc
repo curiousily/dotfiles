@@ -6,11 +6,6 @@ autocmd! bufwritepost .vimrc source % " automatic re-sourcing this file
 " Rebind leader
 let mapleader = ","
 
-" Enable syntax
-syntax on
-filetype off
-filetype plugin indent on
-
 set mouse=a
 
 " Use spaces instead of tabs
@@ -23,7 +18,6 @@ set autoindent
 set smartindent
 
 set t_Co=256
-color wombat256mod
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 
 " yank copies to the system clipboard
@@ -68,6 +62,13 @@ Bundle 'xolox/vim-session'
 Bundle 'sjl/gundo.vim'
 Bundle 'roman/golden-ratio'
 Bundle 'bling/vim-bufferline'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'dag/vim2hs'
+Bundle 'kchmck/vim-coffee-script'
+
+" Enable syntax
+syntax enable
+filetype plugin indent on
 
 set laststatus=2
 let g:Powerline_symbols = 'fancy'
@@ -100,3 +101,12 @@ set directory=~/.vim/swap//
 " autocommands ------------------------------------------------------------
 " opens the file at the exact place of from the last opening
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+
+" coloring
+let g:solarized_termcolors = 24
+let g:solarized_contrast = 'high'
+set background=dark
+color solarized
+
+" Haskell config
+let g:haskell_conceal_wide = 1

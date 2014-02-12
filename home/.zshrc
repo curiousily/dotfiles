@@ -70,3 +70,5 @@ export PATH="/Users/vini/.rbenv/shims:/usr/local/opt/nvm/v0.10.25/bin:/usr/local
 unalias run-help
 autoload run-help
 HELPDIR=/usr/local/share/zsh/helpfiles
+
+source ~/.bashrc
