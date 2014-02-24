@@ -62,7 +62,6 @@ Bundle 'xolox/vim-session'
 Bundle 'sjl/gundo.vim'
 Bundle 'roman/golden-ratio'
 Bundle 'bling/vim-bufferline'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'dag/vim2hs'
 Bundle 'kchmck/vim-coffee-script'
 
@@ -71,7 +70,7 @@ syntax enable
 filetype plugin indent on
 
 set laststatus=2
-let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols='fancy'
 
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
@@ -103,10 +102,11 @@ set directory=~/.vim/swap//
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 
 " coloring
-let g:solarized_termcolors = 24
-let g:solarized_contrast = 'high'
+colorscheme wombat256mod
 set background=dark
-color solarized
 
 " Haskell config
 let g:haskell_conceal_wide = 1
+
+set encoding=utf8
+set termencoding=utf8
