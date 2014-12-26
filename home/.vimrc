@@ -44,26 +44,35 @@ set relativenumber
 set scrolloff=10 " maring for the scrolling cursor
 
 " Use vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
-Bundle 'Lokaltog/powerline'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'tpope/vim-fugitive'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
-Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-session'
-Bundle 'sjl/gundo.vim'
-Bundle 'roman/golden-ratio'
-Bundle 'bling/vim-bufferline'
-Bundle 'dag/vim2hs'
-Bundle 'kchmck/vim-coffee-script'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'Lokaltog/powerline'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'tpope/vim-fugitive'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-session'
+Plugin 'sjl/gundo.vim'
+Plugin 'roman/golden-ratio'
+Plugin 'bling/vim-bufferline'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'kien/ctrlp.vim'
+Plugin 'matze/vim-move'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'klen/python-mode'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'fatih/vim-go'
+Plugin 'vim-scripts/vim-auto-save'
+Plugin 'altercation/vim-colors-solarized'
+Bundle 'pangloss/vim-javascript'
+
+call vundle#end()
 
 " Enable syntax
 syntax enable
@@ -102,11 +111,16 @@ set directory=~/.vim/swap//
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 
 " coloring
-colorscheme wombat256mod
+colorscheme solarized
 set background=dark
-
-" Haskell config
-let g:haskell_conceal_wide = 1
 
 set encoding=utf8
 set termencoding=utf8
+
+" pymode settings
+
+let g:pymode_lint_cwindow = 0
+let g:pymode_lint_on_fly = 1
+
+" enable autosave
+let g:auto_save = 1
