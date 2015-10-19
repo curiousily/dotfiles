@@ -18,7 +18,7 @@ set autoindent
 set smartindent
 
 set t_Co=256
-set guifont=Source\ Code\ Pro\ for\ Powerline:h12
+set guifont=Menlo\ for\ Powerline:h11
 
 " yank copies to the system clipboard
 set clipboard=unnamed
@@ -37,7 +37,8 @@ set smartcase
 " adjust line wraping
 set wrap
 set linebreak
-set textwidth=79
+set textwidth=0
+set wrapmargin=0
 set number
 set relativenumber
 
@@ -50,7 +51,7 @@ call vundle#begin()
 " let Vundle manage Vundle
 " required! 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'Lokaltog/powerline'
+Plugin 'bling/vim-airline'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'tpope/vim-fugitive'
 Plugin 'SirVer/ultisnips'
@@ -60,28 +61,26 @@ Plugin 'xolox/vim-session'
 Plugin 'sjl/gundo.vim'
 Plugin 'roman/golden-ratio'
 Plugin 'bling/vim-bufferline'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 Plugin 'matze/vim-move'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'klen/python-mode'
-Plugin 'digitaltoad/vim-jade'
-Plugin 'fatih/vim-go'
-Plugin 'vim-scripts/vim-auto-save'
 Plugin 'altercation/vim-colors-solarized'
-Bundle 'pangloss/vim-javascript'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'Raimondi/delimitMate'
 
 call vundle#end()
+
+let delimitMate_expand_cr = 1
 
 " Enable syntax
 syntax enable
 filetype plugin indent on
 
 set laststatus=2
-let g:Powerline_symbols='fancy'
-
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 set wildmenu " enable tab command menu
 
@@ -111,8 +110,7 @@ set directory=~/.vim/swap//
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 
 " coloring
-colorscheme solarized
-set background=dark
+colorscheme github
 
 set encoding=utf8
 set termencoding=utf8
@@ -121,6 +119,19 @@ set termencoding=utf8
 
 let g:pymode_lint_cwindow = 0
 let g:pymode_lint_on_fly = 1
+let g:pymode_doc = 0
+let g:pymode_folding = 0
+set completeopt=menu
 
-" enable autosave
-let g:auto_save = 1
+let g:pymode_rope_completion = 1
+let g:pymode_rope_complete_on_dot = 1
+
+" Airline config
+
+let g:airline_theme="powerlineish"
+
+" UltiSnips config
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"

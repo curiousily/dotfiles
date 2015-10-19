@@ -4,3 +4,4 @@ home/.vim/backup/*
 !home/.vim/backup/.gitkeep
 home/.vim/swap/*
 !home/.vim/swap/.gitkeep
+home/.netrwhist
