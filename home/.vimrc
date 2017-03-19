@@ -51,7 +51,8 @@ call vundle#begin()
 " let Vundle manage Vundle
 " required! 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'tpope/vim-fugitive'
 Plugin 'SirVer/ultisnips'
@@ -62,15 +63,17 @@ Plugin 'sjl/gundo.vim'
 Plugin 'roman/golden-ratio'
 Plugin 'bling/vim-bufferline'
 Plugin 'kien/ctrlp.vim'
-Plugin 'matze/vim-move'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'klen/python-mode'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'terryma/vim-multiple-cursors'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'Raimondi/delimitMate'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax' 
+Plugin 'Shougo/unite.vim'
+Plugin 'rhysd/vim-grammarous'
+Plugin 'joshdick/onedark.vim'
 
 call vundle#end()
 
@@ -129,9 +132,12 @@ let g:pymode_rope_complete_on_dot = 1
 " Airline config
 
 let g:airline_theme="powerlineish"
+let g:airline#extensions#tabline#enabled = 1
 
 " UltiSnips config
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+let g:grammarous#languagetool_cmd = 'languagetool'
