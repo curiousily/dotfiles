@@ -65,7 +65,6 @@ Plugin 'bling/vim-bufferline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'klen/python-mode'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'Raimondi/delimitMate'
@@ -74,6 +73,9 @@ Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'Shougo/unite.vim'
 Plugin 'rhysd/vim-grammarous'
 Plugin 'joshdick/onedark.vim'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'junegunn/vim-easy-align'
 
 call vundle#end()
 
@@ -113,25 +115,16 @@ set directory=~/.vim/swap//
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 
 " coloring
-colorscheme github
+colorscheme onedark
 
 set encoding=utf8
 set termencoding=utf8
 
-" pymode settings
-
-let g:pymode_lint_cwindow = 0
-let g:pymode_lint_on_fly = 1
-let g:pymode_doc = 0
-let g:pymode_folding = 0
-set completeopt=menu
-
-let g:pymode_rope_completion = 1
-let g:pymode_rope_complete_on_dot = 1
+let g:onedark_terminal_italics=1
 
 " Airline config
 
-let g:airline_theme="powerlineish"
+let g:airline_theme="onedark"
 let g:airline#extensions#tabline#enabled = 1
 
 " UltiSnips config
@@ -140,4 +133,22 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+" Grammarous
+
 let g:grammarous#languagetool_cmd = 'languagetool'
+let g:grammarous#use_vim_spelllang = 1
+
+" Gundo
+
+let g:gundo_prefer_python3 = 1
+
+" Syntastic
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
