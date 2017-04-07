@@ -4,7 +4,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="Agnoster"
+ZSH_THEME="agnoster"
 #clean
 
 # Example aliases
@@ -45,13 +45,14 @@ ZSH_THEME="Agnoster"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-extras brew node)
+plugins=(git git-extras brew node zsh-completions zsh-syntax-highlighting)
+
+autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/Users/vini/.rbenv/shims:/usr/local/opt/nvm/v0.10.25/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
@@ -73,8 +74,4 @@ HELPDIR=/usr/local/share/zsh/helpfiles
 
 source ~/.bashrc
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
 DEFAULT_USER="vini"
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

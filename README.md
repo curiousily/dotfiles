@@ -23,19 +23,17 @@ Install bundles in vim
 :BundleInstall
 ```
 
+To properly install [YouCompleteMe](https://github.com/Valloric/YouCompleteMe/)
 
-Troubleshooting
----------------
+## Fonts
 
-If you get something like the following error
-    
-    An error occurred while importing the Powerline package. This could be
-    caused by an invalid sys.path setting, or by an incompatible Python version
-    (Powerline requires Python 2.6+ or 3.2+ to work). Please consult the
-    troubleshooting section in the documentation for possible solutions.
+- [Menlo For Powerline](https://github.com/abertsch/Menlo-for-Powerline)
+- [Fira Code](https://github.com/tonsky/FiraCode)
 
-Use the following to install powerline
+## ZSH Plugins
 
 ```bash
-sudo pip install --user -U git+git://github.com/Lokaltog/powerline
+git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 ```
+
