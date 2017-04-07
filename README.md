@@ -13,7 +13,7 @@ gem install homesick
 Use this repo
 
 ```bash
-homesick clone git@github.com:venelin/dotfiles.git
+homesick clone git@github.com:curiousily/dotfiles.git
 homesick symlink dotfiles
 ```
 
