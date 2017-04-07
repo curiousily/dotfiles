@@ -23,7 +23,7 @@ Install bundles in vim
 :BundleInstall
 ```
 
-To properly install [YouCompleteMe](https://github.com/Valloric/YouCompleteMe/)
+To properly install [YouCompleteMe](https://github.com/Valloric/YouCompleteMe/) preinstall node & go.
 
 ## Fonts
 
