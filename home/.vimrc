@@ -18,7 +18,6 @@ set autoindent
 set smartindent
 
 set t_Co=256
-set guifont=Menlo\ for\ Powerline:h11
 
 " yank copies to the system clipboard
 set clipboard=unnamed
