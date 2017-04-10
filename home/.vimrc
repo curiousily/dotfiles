@@ -17,7 +17,7 @@ set expandtab
 set autoindent
 set smartindent
 
-set t_Co=256
+set termguicolors
 
 " yank copies to the system clipboard
 set clipboard=unnamed
@@ -61,7 +61,7 @@ Plugin 'xolox/vim-session'
 Plugin 'sjl/gundo.vim'
 Plugin 'roman/golden-ratio'
 Plugin 'bling/vim-bufferline'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'godlygeek/tabular'
@@ -75,6 +75,7 @@ Plugin 'joshdick/onedark.vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'ryanoasis/vim-devicons'
 
 call vundle#end()
 

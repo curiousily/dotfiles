@@ -1,10 +1,11 @@
+export TERM="xterm-256color"
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load.
+ZSH_THEME="powerlevel9k/powerlevel9k"
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
 #clean
 
 # Example aliases
@@ -45,11 +46,12 @@ ZSH_THEME="agnoster"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-extras brew node zsh-completions zsh-syntax-highlighting)
+plugins=(git git-extras brew vi-mode zsh-autosuggestions zsh-completions zsh-syntax-highlighting)
 
 autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
+
 
 # User configuration
 
@@ -75,3 +77,10 @@ HELPDIR=/usr/local/share/zsh/helpfiles
 source ~/.bashrc
 
 DEFAULT_USER="vini"
+
+# Theme configs
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir pyenv vcs vi_mode)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(root_indicator background_jobs load)
+
+POWERLEVEL9K_MODE='nerdfont-complete'
