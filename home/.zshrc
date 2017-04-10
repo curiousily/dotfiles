@@ -80,7 +80,7 @@ DEFAULT_USER="vini"
 
 # Theme configs
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir pyenv vcs vi_mode)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(root_indicator background_jobs load)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vi_mode pyenv)
 
 POWERLEVEL9K_MODE='nerdfont-complete'
