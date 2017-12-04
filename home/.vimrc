@@ -76,6 +76,9 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'ryanoasis/vim-devicons'
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim'
 
 call vundle#end()
 
@@ -153,4 +156,13 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_python_exec = 'python3'
-let g:syntastic_python_checkers = ['pylint']
+"Enable this when it is adequate for Python 3.6
+"let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_checkers = ['flake8']
+
+let g:elm_syntastic_show_warnings = 1
+
+" YouCompleteMe
+let g:ycm_semantic_triggers = {
+    \ 'elm' : ['.'],
+    \}

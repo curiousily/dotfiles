@@ -84,3 +84,6 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vi_mode pyenv)
 
 POWERLEVEL9K_MODE='nerdfont-complete'
+
+# added by travis gem
+[ -f /Users/vini/.travis/travis.sh ] && source /Users/vini/.travis/travis.sh
