@@ -48,8 +48,6 @@ set scrolloff=10 " maring for the scrolling cursor
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle
-" required! 
 Plug 'sjl/gundo.vim'
 Plug 'roman/golden-ratio'
 Plug 'bling/vim-bufferline'
