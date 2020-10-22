@@ -43,44 +43,29 @@ set relativenumber
 
 set scrolloff=10 " maring for the scrolling cursor
 
-" Use vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
 
 " let Vundle manage Vundle
 " required! 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'tpope/vim-fugitive'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-session'
-Plugin 'sjl/gundo.vim'
-Plugin 'roman/golden-ratio'
-Plugin 'bling/vim-bufferline'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'Raimondi/delimitMate'
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'vim-pandoc/vim-pandoc-syntax' 
-Plugin 'Shougo/unite.vim'
-Plugin 'rhysd/vim-grammarous'
-Plugin 'joshdick/onedark.vim'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'junegunn/vim-easy-align'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'junegunn/goyo.vim'
-Plugin 'junegunn/limelight.vim'
+Plug 'sjl/gundo.vim'
+Plug 'roman/golden-ratio'
+Plug 'bling/vim-bufferline'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdcommenter'
+Plug 'Raimondi/delimitMate'
+Plug 'Shougo/unite.vim'
+Plug 'joshdick/onedark.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'joshdick/onedark.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'itchyny/lightline.vim'
 
-call vundle#end()
+" Initialize plugin system
+call plug#end()
 
 let delimitMate_expand_cr = 1
 
@@ -117,52 +102,15 @@ set directory=~/.vim/swap//
 " opens the file at the exact place of from the last opening
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 
-" coloring
-colorscheme onedark
 
 set encoding=utf8
 set termencoding=utf8
 
+" coloring
+colorscheme onedark
 let g:onedark_terminal_italics=1
+let g:onedark_termcolors=16
 
-" Airline config
-
-let g:airline_theme="onedark"
-let g:airline#extensions#tabline#enabled = 1
-
-" UltiSnips config
-
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" Grammarous
-
-let g:grammarous#languagetool_cmd = 'languagetool'
-let g:grammarous#use_vim_spelllang = 1
-
-" Gundo
-
-let g:gundo_prefer_python3 = 1
-
-" Syntastic
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_python_exec = 'python3'
-"Enable this when it is adequate for Python 3.6
-"let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_python_checkers = ['flake8']
-
-let g:elm_syntastic_show_warnings = 1
-
-" YouCompleteMe
-let g:ycm_semantic_triggers = {
-    \ 'elm' : ['.'],
-    \}
+let g:lightline = {
+  \ 'colorscheme': 'onedark',
+  \ }
