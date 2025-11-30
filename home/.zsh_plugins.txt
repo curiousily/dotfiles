@@ -1,0 +1,11 @@
+# --- Core Functionality ---
+# Additional completion definitions for Zsh
+zsh-users/zsh-completions
+
+# --- Visual & Behavior ---
+# Syntax highlighting (must be near the end of the list usually, but Antidote handles it)
+zsh-users/zsh-syntax-highlighting
+# Autosuggestions (ghost text)
+zsh-users/zsh-autosuggestions
+# Substring search (Up arrow history)
+zsh-users/zsh-history-substring-search

@@ -1,27 +1,55 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# ==========================================
+# 1. Environment & Basic Settings
+# ==========================================
+export TERM="xterm-256color"
+export EDITOR="code -w"
+setopt AUTO_CD              # cd without typing 'cd'
+setopt HIST_IGNORE_DUPS     # No duplicate history
+setopt SHARE_HISTORY        # Share history between tabs
 
-source ~/.zplug/init.zsh
+# ==========================================
+# 2. Antidote Plugin Manager
+# ==========================================
+# Load Antidote
+source $(brew --prefix)/share/antidote/antidote.zsh
 
-zplug "woefe/wbase.zsh"
-zplug "woefe/git-prompt.zsh", use:"{git-prompt.zsh,examples/wprompt.zsh}"
-zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zsh-users/zsh-history-substring-search", defer:3
-zplug "plugins/git",   from:oh-my-zsh
-zplug romkatv/powerlevel10k, as:theme, depth:1
-zplug load
+# Bundle plugins (compiles .zsh_plugins.txt -> .zsh_plugins.zsh)
+antidote load
 
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+# ==========================================
+# 3. Post-Plugin Configuration
+# ==========================================
+# Fix Compdef error (load completions if Antidote didn't catch them all)
+autoload -Uz compinit && compinit
 
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'  # Case insensitive (cd doc -> Documents)
+# zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # Colorize completion menu
+# zstyle ':completion:*' menu select                      # Interactive menu (use arrow keys)
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# --- 2. Tool Integrations (AI/ML Stack) ---
+# Initialize Fast Node Manager (fnm)
+eval "$(fnm env --use-on-cd)"
+
+# Initialize 'uv' autocompletion
+eval "$(uv generate-shell-completion zsh)"
+
+# Git Aliases (Minimal)
+alias g='git'
+alias gst='git status'
+alias ga='git add'
+alias gc='git commit -m'
+alias gp='git push'
+
+# Docker Aliases
+alias d='docker'
+alias dps='docker ps'
+alias dco='docker compose'
+
+# Python/AI Shortcuts
+alias py='python3'
+alias ipy='python3 -c "import IPython; IPython.terminal.ipapp.launch_new_instance()"'
+
+alias dev="cd ~/Dev"
+
+# --- 3. Prompt (Starship) ---
+eval "$(starship init zsh)"

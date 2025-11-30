@@ -1,0 +1,66 @@
+# Move tools to the right, keep directory and git on the left
+format = """
+$directory$git_branch$git_status$character
+"""
+
+right_format = """
+$docker_context$python$nodejs
+"""
+
+# Keep it compact
+add_newline = false
+
+# --- Left Side Config ---
+
+[directory]
+style = "bold #61afef" 
+read_only = " "
+truncation_length = 3
+format = "[$path]($style)[$read_only]($read_only_style) "
+
+[git_branch]
+style = "bold #98c379"
+symbol = " "
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "bold #e5c07b"
+# Minimalist arrows and symbols instead of emojis
+conflicted = " "
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇕"
+up_to_date = ""
+untracked = "?"
+stashed = " "
+modified = ""
+renamed = "»"
+deleted = "✘"
+format = "[$all_status$ahead_behind]($style) "
+
+[character]
+# The classic Powerline arrow
+success_symbol = "[❯](bold #61afef)"
+error_symbol = "[❯](bold #e06c75)"
+
+# --- Right Side Config (Icons + Brackets) ---
+
+[docker_context]
+symbol = " " 
+format = '[\[](bold #5c6370)[ $symbol$context ](#4078f2)[\]](bold #5c6370) '
+only_with_files = true
+
+[python]
+symbol = " " 
+format = '[\[](bold #5c6370)[ $symbol$version ](#61afef)[\]](bold #5c6370) '
+detect_extensions = ["py"]
+detect_files = ["pyproject.toml", "requirements.txt", ".python-version"]
+
+[nodejs]
+symbol = " " 
+format = '[\[](bold #5c6370)[ $symbol$version ](#76a05e)[\]](bold #5c6370) '
+
+[cmd_duration]
+min_time = 500
+format = "took [$duration]($style) "
+style = "yellow bold"
