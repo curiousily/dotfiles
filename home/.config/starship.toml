@@ -36,7 +36,7 @@ stashed = " "
 modified = ""
 renamed = "»"
 deleted = "✘"
-format = "[$all_status$ahead_behind]($style) "
+format = "[$all_status$ahead_behind]($style)"
 
 [character]
 # The classic Powerline arrow

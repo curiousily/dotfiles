@@ -1,6 +1,8 @@
 My dotfiles
 ========
 
+Optimized for MacOS & Ghostty
+
 ```bash
 git clone git@github.com:curiousily/dotfiles.git
 cd dotfiles
