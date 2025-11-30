@@ -5,7 +5,8 @@ foreground = #abb2bf
 
 # --- Font ---
 # font-family = "JetBrainsMono Nerd Font Mono"
-font-family = "CommitMono Nerd Font"
+# font-family = "CommitMono Nerd Font"
+font-family = "BlexMono Nerd Font"
 font-size = 14
 # Enable ligatures (Contextual Alternates)
 font-feature = calt

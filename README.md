@@ -10,6 +10,7 @@ Install dependencies
 
 ```bash
 brew install zsh ghostty starship fnm uv git antidote --cask docker
+brew install --cask font-blex-mono-nerd-font
 ```
 
 Make directories and copy files
